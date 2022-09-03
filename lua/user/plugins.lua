@@ -37,6 +37,9 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use 'kyazdani42/nvim-web-devicons' -- for file icons
 
+  -- Colorscheme
+  use 'navarasu/onedark.nvim'
+
   -- fuzzy file search
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
@@ -71,6 +74,7 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
+  use "jose-elias-alvarez/null-ls.nvim" -- formatting and diagnostics
 
   -- Copilot
   use "github/copilot.vim"
@@ -89,6 +93,25 @@ return packer.startup(function(use)
 
   -- toggle terminal
   use { "akinsho/toggleterm.nvim", tag = 'v2.*' }
+
+  -- git stuff
+  use {
+    'lewis6991/gitsigns.nvim'
+  }
+
+  use {
+    "folke/zen-mode.nvim",
+    config = function()
+      require("zen-mode").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  }
+
+  -- statusline
+  use 'feline-nvim/feline.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

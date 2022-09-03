@@ -10,6 +10,7 @@ end
 
 telescope.setup{
   defaults = {
+    path_display = {"truncate"},
     mappings = {
       n = {
         ["?"] = action_generate.which_key {
